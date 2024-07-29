@@ -60,7 +60,7 @@
             position: absolute;
             left: -505px;
             transition: left 2s;
-            height: 100%;
+            height: calc(100vh - 97px); /* Adjust height to fit the screen */
         }
         header {
             font-size: 24px;
@@ -87,6 +87,9 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
         }
         .submit-btn:hover {
             background-color: #0056b3;
@@ -108,16 +111,24 @@
             cursor: pointer;
             font-size: 36px;
         }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .close i {
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
         <img src="imperial-crest-logo (1).png" alt="Logo"> <!-- Replace with your logo URL -->
         <a href="#home"><i class="fas fa-home"></i></a>
-        
     </div>
     <div id="travelFormContainer" class="container">
-        <div href="#close"><i class="fa-solid fa-xmark"></i></div>
+        <div class="close" onclick="hideForm()"><i class="fas fa-times"></i></div>
         <header>Travel</header>
         <form id="travelForm">
             <label for="destination">Where is your destination?</label>
@@ -142,6 +153,10 @@
     <script>
         function showForm() {
             document.getElementById('travelFormContainer').style.left = '0px';
+        }
+
+        function hideForm() {
+            document.getElementById('travelFormContainer').style.left = '-505px';
         }
 
         document.getElementById('travelForm').addEventListener('submit', function(event) {
