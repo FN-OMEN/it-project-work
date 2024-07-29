@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            background: url('PLANE.jpg') no-repeat center center fixed;
+            background-size: cover;
+            flex-direction: column;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #fcfcfc;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10vh;
+        }
+        .navbar img {
+            height: 70px;
+        }
+        .navbar a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 100%;
+            padding: 14px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar i {
+            font-size: 35px;
+        }
+        .container {
+            width: 400px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-top-right-radius: 15px;
+            margin-top: 97px;
+            position: absolute;
+            left: -505px;
+            transition: left 2s;
+            height: 100%;
+        }
+        header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="date"] {
+            width: calc(100% - 10px);
+            padding: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .travelForm {
+            background-color: #5180b3;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+        }
+        .travelForm-btn {
+            padding: 20px;
+            background-color: #497099;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="imperial-crest-logo (1).png" alt="Logo"> <!-- Replace with your logo URL -->
+        <a href="#home"><i class="fas fa-home"></i></a>
+        
+    </div>
+    <div id="travelFormContainer" class="container">
+        <div href="#close"><i class="fa-solid fa-xmark"></i></div>
+        <header>Travel</header>
+        <form id="travelForm">
+            <label for="destination">Where is your destination?</label>
+            <input type="text" id="destination" name="destination" required>
+            
+            <label for="checkin">Check-in Date</label>
+            <input type="date" id="checkin" name="checkin" required>
+            
+            <label for="checkout">Check-out Date</label>
+            <input type="date" id="checkout" name="checkout" required>
+            
+            <label for="hotel">Hotel</label>
+            <input type="text" id="hotel" name="hotel" required>
+            
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <div class="travelForm">
+        <button onclick="showForm()" type="button" class="travelForm-btn">Proceed to Travel Form</button>
+    </div>
+
+    <script>
+        function showForm() {
+            document.getElementById('travelFormContainer').style.left = '0px';
+        }
+
+        document.getElementById('travelForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            const destination = document.getElementById('destination').value;
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const hotel = document.getElementById('hotel').value;
+
+            // For demonstration purposes, we'll just log the form data to the console
+            console.log('Destination:', destination);
+            console.log('Check-in Date:', checkin);
+            console.log('Check-out Date:', checkout);
+            console.log('Hotel:', hotel);
+
+            // You can add your form submission logic here, such as sending the data to a server
+        });
+    </script>
+</body>
+</html>
