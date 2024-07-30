@@ -29,6 +29,7 @@
             justify-content: space-between;
             align-items: center;
             height: 10vh;
+            z-index: 100;
         }
         .navbar img {
             height: 70px;
@@ -61,6 +62,8 @@
             left: -505px;
             transition: left 2s;
             height: calc(100vh - 97px); /* Adjust height to fit the screen */
+            overflow-y: auto; /* Enable vertical scrolling */
+            z-index: 0;
         }
         header {
             font-size: 24px;
@@ -79,7 +82,7 @@
             border-radius: 5px;
         }
         .submit-btn {
-            width: 100%;
+            width: 50%;
             padding: 10px;
             background-color: #007bff;
             color: white;
@@ -87,9 +90,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            position: absolute;
-            bottom: 20px;
-            left: 0px;
+
         }
         .submit-btn:hover {
             background-color: #0056b3;
@@ -120,6 +121,11 @@
         .close i {
             font-size: 24px;
         }
+        .submit{
+            width: 100%;
+            text-align: center;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
@@ -142,8 +148,10 @@
             
             <label for="hotel">Hotel</label>
             <input type="text" id="hotel" name="hotel" required>
-            
-            <button type="submit" class="submit-btn">Submit</button>
+            <div class="submit">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+
         </form>
     </div>
     <div class="travelForm">
