@@ -89,7 +89,7 @@
             font-size: 16px;
             position: absolute;
             bottom: 20px;
-            left: 20px;
+            left: 0px;
         }
         .submit-btn:hover {
             background-color: #0056b3;
@@ -153,10 +153,12 @@
     <script>
         function showForm() {
             document.getElementById('travelFormContainer').style.left = '0px';
+            document.querySelector('.travelForm').style.display = 'none';
         }
 
         function hideForm() {
             document.getElementById('travelFormContainer').style.left = '-505px';
+            document.querySelector('.travelForm').style.display = 'block';
         }
 
         document.getElementById('travelForm').addEventListener('submit', function(event) {
